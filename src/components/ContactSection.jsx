@@ -110,19 +110,40 @@ export default function ContactSection() {
 
             {/* Phone & WhatsApp Card */}
             <div className="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-soft hover:shadow-card transition-all flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-brand-50 text-brand-800 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0">
                 <Phone className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <h4 className="font-bold text-gray-900 text-base mb-1">
                   {siteConfig.contact.phone.label}
                 </h4>
-                <p className="text-sm text-gray-600">
-                  {siteConfig.contact.phone.value}
-                </p>
-                <div className="mt-2 pt-2 border-t border-gray-100 flex items-center gap-2 text-xs text-emerald-700 font-semibold">
-                  <MessageCircle className="w-4 h-4" />
-                  <span>হোয়াটসঅ্যাপ: {siteConfig.contact.whatsapp.value}</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href={`tel:${siteConfig.contact.phone.raw}`}
+                    className="text-base font-bold text-brand-900 hover:text-brand-700 font-sans"
+                  >
+                    {siteConfig.contact.phone.value}
+                  </a>
+                  <span className="text-xs bg-gray-100 text-gray-700 font-semibold px-2 py-0.5 rounded">
+                    ({siteConfig.contact.phone.bn})
+                  </span>
+                </div>
+                <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
+                  <a
+                    href={siteConfig.contact.whatsapp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition-all"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-white" />
+                    <span>হোয়াটসঅ্যাপ চ্যাট করুন</span>
+                  </a>
+                  <a
+                    href={`tel:${siteConfig.contact.phone.raw}`}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-brand-800 hover:underline"
+                  >
+                    <span>কল করুন</span>
+                  </a>
                 </div>
               </div>
             </div>

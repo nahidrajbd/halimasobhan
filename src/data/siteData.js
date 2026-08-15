@@ -40,7 +40,61 @@ export const siteConfig = {
     },
   ],
 
-  // Core Activities (Categorized from Foundation Signboard)
+  // Team Members (6 people including 2 key persons)
+  teamMembers: [
+    {
+      id: 1,
+      name: "নাম সংযুক্ত হবে",
+      role: "প্রতিষ্ঠাতা ও সভাপতি",
+      designation: "প্রধান পৃষ্ঠপোষক ও উপদেষ্টা",
+      isKey: true,
+      bio: "হালিমা সোবহান ফাউন্ডেশনের প্রতিষ্ঠাতা ও প্রধান চালিকাশক্তি। মানবতার সেবা এবং সামাজিক উন্নয়নমূলক উদ্যোগসমূহের সার্বিক দিকনির্দেশনা প্রদান করছেন।",
+      image: ""
+    },
+    {
+      id: 2,
+      name: "নাম সংযুক্ত হবে",
+      role: "সাধারণ সম্পাদক / নির্বাহী পরিচালক",
+      designation: "সামগ্রিক ব্যবস্থাপনা ও বাস্তবায়ন",
+      isKey: true,
+      bio: "ফাউন্ডেশনের মাঠপর্যায়ের জনকল্যাণমূলক প্রকল্প বাস্তবায়ন, জরুরি স্বাস্থ্যসেবা ও প্রাতিষ্ঠানিক সমন্বয়ের প্রধান দায়িত্ব পালন করছেন।",
+      image: ""
+    },
+    {
+      id: 3,
+      name: "নাম সংযুক্ত হবে",
+      role: "পরিচালক (স্বাস্থ্যসেবা)",
+      designation: "স্বাস্থ্য ও জরুরি সেবা সমন্বয়ক",
+      isKey: false,
+      image: ""
+    },
+    {
+      id: 4,
+      name: "নাম সংযুক্ত হবে",
+      role: "পরিচালক (অর্থ ও প্রশাসন)",
+      designation: "অর্থ ও অডিট ব্যবস্থাপনা",
+      isKey: false,
+      image: ""
+    },
+    {
+      id: 5,
+      name: "নাম সংযুক্ত হবে",
+      role: "পরিচালক (শিক্ষা ও প্রশিক্ষণ)",
+      designation: "মেধা বৃত্তি ও দক্ষতা উন্নয়ন",
+      isKey: false,
+      image: ""
+    },
+    {
+      id: 6,
+      name: "নাম সংযুক্ত হবে",
+      role: "পরিচালক (সমাজকল্যাণ)",
+      designation: "ত্রাণ ও অবকাঠামো উন্নয়ন",
+      isKey: false,
+      image: ""
+    }
+  ],
+
+  // About Section Highlights
   activityCategories: [
     {
       id: "healthcare",
@@ -211,22 +265,26 @@ export const siteConfig = {
     }
   ],
 
-  // Contact Info Placeholders (Centralized & easy to update)
+  // Contact Info
   contact: {
     address: {
       label: "ঠিকানা",
-      value: "ফাউন্ডেশন কার্যালয় (ঠিকানা শীঘ্রই সংযুক্ত হবে)",
+      value: "আহমদনগর, চড়ারহাট, দিনাজপুর",
       note: "প্রধান কার্যালয় ও সেবা কেন্দ্র"
     },
     phone: {
       label: "মোবাইল / হটলাইন",
-      value: "যোগাযোগ নম্বর শীঘ্রই সংযুক্ত হবে",
+      value: "+880 1711-238555",
+      raw: "+8801711238555",
+      bn: "০১৭১১-২৩৮৫৫৫",
       note: "জরুরি সেবা ও পরামর্শের জন্য"
     },
     whatsapp: {
       label: "হোয়াটসঅ্যাপ",
-      value: "হোয়াটসঅ্যাপ নম্বর শীঘ্রই সংযুক্ত হবে",
-      note: "মেসেজে তথ্যের জন্য"
+      value: "+880 1711-238555",
+      raw: "+8801711238555",
+      link: "https://wa.me/8801711238555",
+      note: "সরাসরি হোয়াটসঅ্যাপে বার্তা পাঠান"
     },
     email: {
       label: "ইমেইল",

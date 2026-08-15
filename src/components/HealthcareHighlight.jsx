@@ -112,13 +112,21 @@ export default function HealthcareHighlight() {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-base shadow-md transition-all text-center"
+                  href={`tel:${siteConfig.contact.phone.raw}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-sm shadow-md transition-all text-center"
                 >
-                  <PhoneCall className="w-5 h-5" />
-                  <span>জরুরি যোগাযোগ করুন</span>
+                  <PhoneCall className="w-4 h-4" />
+                  <span>সরাসরি কল: {siteConfig.contact.phone.value}</span>
+                </a>
+                <a
+                  href={siteConfig.contact.whatsapp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all text-center"
+                >
+                  <span>হোয়াটসঅ্যাপে যোগাযোগ</span>
                 </a>
               </div>
             </div>

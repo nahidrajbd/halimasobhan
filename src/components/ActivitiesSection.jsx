@@ -1,169 +1,104 @@
-import React, { useState } from 'react';
-import {
-  HeartPulse,
-  GraduationCap,
-  HandHeart,
-  Briefcase,
-  Wind,
-  Ambulance,
-  Stethoscope,
-  Coins,
-  UserCheck,
-  Sparkles,
-  Award,
-  Percent,
-  ShoppingBag,
-  ShieldAlert,
-  Scissors,
-  BadgeCheck,
-  Laptop,
-  Wrench,
-  CheckCircle,
-  ArrowUpRight
+import React from 'react';
+import { 
+  HeartPulse, 
+  GraduationCap, 
+  HandHeart, 
+  Briefcase, 
+  ArrowRight,
+  Sparkles
 } from 'lucide-react';
-import { siteConfig } from '../data/siteData';
-
-// Map string icon names to Lucide icons
-const iconMap = {
-  HeartPulse,
-  GraduationCap,
-  HandHeart,
-  Briefcase,
-  Wind,
-  Ambulance,
-  Stethoscope,
-  Coins,
-  UserCheck,
-  Sparkles,
-  Award,
-  Percent,
-  ShoppingBag,
-  ShieldAlert,
-  Scissors,
-  BadgeCheck,
-  Laptop,
-  Wrench,
-};
 
 export default function ActivitiesSection() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const categories = [
-    { id: 'all', title: 'সকল কার্যক্রম', icon: Sparkles },
-    ...siteConfig.activityCategories.map(cat => ({
-      id: cat.id,
-      title: cat.title,
-      icon: iconMap[cat.icon] || Sparkles
-    }))
+  const activitiesList = [
+    {
+      id: 'healthcare',
+      title: '১. জরুরি স্বাস্থ্য ও চিকিৎসা সেবা',
+      icon: HeartPulse,
+      iconColor: 'text-rose-600 bg-rose-50',
+      paragraph: 'মুমূর্ষু ও সংকটাপন্ন রোগীদের জীবন রক্ষায় সার্বক্ষণিক বিনামূল্যে অক্সিজেন সিলিন্ডার সরবরাহ এবং দ্রুত হাসপাতালে স্থানান্তরের জন্য ডেডিকেটেড অ্যাম্বুলেন্স সেবা। অসচ্ছল রোগীদের বিনামূল্যে চিকিৎসা ও ওষুধ সহায়তা, বিশেষজ্ঞ চিকিৎসকের মাধ্যমে নিয়মিত ফ্রি মেডিকেল ক্যাম্প এবং সাশ্রয়ী মূল্যে ফিজিওথেরাপি সেবা প্রদান করা হয়।'
+    },
+    {
+      id: 'education',
+      title: '২. শিক্ষা সহায়তা ও মেধা বৃত্তি',
+      icon: GraduationCap,
+      iconColor: 'text-blue-600 bg-blue-50',
+      paragraph: 'অভাবের কারণে যাতে কোনো মেধাবী শিক্ষার্থীর লেখাপড়া থমকে না যায়, সেজন্য দরিদ্র ও কৃতি শিক্ষার্থীদের নিয়মিত শিক্ষা উপবৃত্তি প্রদান করা হয়। পাশাপাশি অস্বচ্ছল পরিবারের শিক্ষার্থীদের বিভিন্ন পাবলিক পরীক্ষা ও ভর্তি কার্যক্রমে ৩০% থেকে ৫০% পর্যন্ত আর্থিক অনুদান ও ছাড়ের ব্যবস্থা রয়েছে।'
+    },
+    {
+      id: 'social',
+      title: '৩. সামাজিক কল্যাণ ও অবকাঠামো সংস্কার',
+      icon: HandHeart,
+      iconColor: 'text-amber-600 bg-amber-50',
+      paragraph: 'দ্রব্যমূল্যের ঊর্ধ্বগতিতে সাধারণ ও দরিদ্র পরিবারের জন্য নিত্যপ্রয়োজনীয় ভোগ্যপণ্য সুলভ ও সাশ্রয়ী মূল্যে বিতরণ করা হয়। এছাড়া দুর্গম ও ক্ষতিগ্রস্ত গ্রামীণ রাস্তাঘাট, সাঁকো ও খেয়াঘাট সংস্কারের মাধ্যমে জনসাধারণের দৈনন্দিন যাতায়াত ও চলাচল সুগম করতে স্বেচ্ছাশ্রম ও সহায়তা প্রদান করা হয়।'
+    },
+    {
+      id: 'skills',
+      title: '৪. আত্মকর্মসংস্থান ও দক্ষতা উন্নয়ন',
+      icon: Briefcase,
+      iconColor: 'text-emerald-600 bg-emerald-50',
+      paragraph: 'সুবিধাবঞ্চিত নারীদের স্বাবলম্বী করে গড়ে তুলতে আধুনিক ব্যবহারিক সেলাই প্রশিক্ষণ, গ্রামীন তরুণদের আত্মকর্মসংস্থানে আধুনিক গবাদি পশু পালন কৌশল, ডিজিটাল যুগে কম্পিউটার প্রশিক্ষণসহ স্থানীয় চাহিদার ভিত্তিতে বিভিন্ন কারিগরি ও বৃত্তিমূলক প্রশিক্ষণ প্রদান করা হয়।'
+    }
   ];
 
-  const filteredCategories = selectedCategory === 'all'
-    ? siteConfig.activityCategories
-    : siteConfig.activityCategories.filter(cat => cat.id === selectedCategory);
-
   return (
-    <section id="activities" className="py-20 sm:py-28 bg-white border-y border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="activities" className="py-16 sm:py-24 bg-white border-y border-gray-100">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-800 text-sm font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-800 text-sm font-semibold mb-3">
+            <Sparkles className="w-4 h-4 text-brand-800" />
             <span>জনকল্যাণমূলক সেবাসমূহ</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             আমাদের কার্যক্রম
           </h2>
-          <p className="text-lg text-gray-600">
-            সমাজের প্রতিটি স্তরের অসহায় মানুষের বাস্তব প্রয়োজন বিবেচনায় রেখে হালিমা সোবহান ফাউন্ডেশনের বিভিন্ন মানবিক কর্মসূচি।
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            সমাজের প্রতিটি স্তরের অসহায় ও সুবিধাবঞ্চিত মানুষের বাস্তব প্রয়োজন বিবেচনায় রেখে হালিমা সোবহান ফাউন্ডেশন বিভিন্ন মানবিক কর্মসূচি আন্তরিকতার সাথে বাস্তবায়ন করছে।
           </p>
         </div>
 
-        {/* Category Tabs Filter */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-14">
-          {categories.map((cat) => {
-            const IconComp = cat.icon;
-            const isSelected = selectedCategory === cat.id;
+        {/* Minimized Paragraph-Style Content */}
+        <div className="space-y-6 bg-[#FCFBF7] rounded-3xl p-6 sm:p-10 border border-gray-200/90 shadow-sm">
+          {activitiesList.map((item) => {
+            const IconComp = item.icon;
             return (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-sm sm:text-base font-semibold transition-all duration-200 ${
-                  isSelected
-                    ? 'bg-brand-800 text-white shadow-md shadow-brand-900/20'
-                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100 hover:text-gray-900 border border-gray-200/70'
-                }`}
+              <div 
+                key={item.id} 
+                className="p-5 sm:p-6 rounded-2xl bg-white border border-gray-200/70 hover:border-brand-300 transition-colors"
               >
-                <IconComp className="w-4 h-4" />
-                <span>{cat.title}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Category Groups and Cards */}
-        <div className="space-y-16">
-          {filteredCategories.map((category) => {
-            const CategoryIcon = iconMap[category.icon] || HeartPulse;
-            return (
-              <div key={category.id} className="space-y-6">
-                {/* Category Section Header */}
-                <div className="flex items-center gap-3 pb-3 border-b-2 border-brand-100">
-                  <div className="w-10 h-10 rounded-lg bg-brand-800 text-white flex items-center justify-center">
-                    <CategoryIcon className="w-5 h-5" />
+                <div className="flex items-start gap-4">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${item.iconColor}`}>
+                    <IconComp className="w-5 h-5" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">
-                      {category.title}
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                      {item.title}
                     </h3>
-                    <p className="text-sm text-gray-500 font-medium">
-                      {category.subtitle}
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                      {item.paragraph}
                     </p>
                   </div>
-                </div>
-
-                {/* Grid of Activity Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {category.items.map((item, idx) => {
-                    const ItemIcon = iconMap[item.icon] || CheckCircle;
-                    return (
-                      <div
-                        key={idx}
-                        className="bg-[#FCFBF7] rounded-2xl p-6 border border-gray-200/80 shadow-soft hover:shadow-card hover:border-brand-300 transition-all duration-300 flex flex-col justify-between group"
-                      >
-                        <div>
-                          {/* Card Top: Icon & Badge */}
-                          <div className="flex items-start justify-between gap-3 mb-4">
-                            <div className="w-12 h-12 rounded-xl bg-white text-brand-800 border border-gray-100 shadow-sm flex items-center justify-center group-hover:scale-105 group-hover:bg-brand-800 group-hover:text-white transition-all">
-                              <ItemIcon className="w-6 h-6" />
-                            </div>
-                            <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-brand-100/70 text-brand-900 border border-brand-200">
-                              {item.badge}
-                            </span>
-                          </div>
-
-                          {/* Card Title & Desc */}
-                          <h4 className="text-lg font-bold text-gray-900 mb-2.5 leading-snug group-hover:text-brand-800 transition-colors">
-                            {item.title}
-                          </h4>
-                          <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                            {item.desc}
-                          </p>
-                        </div>
-
-                        {/* Card Bottom CTA Link */}
-                        <div className="pt-3 border-t border-gray-200/60 flex items-center justify-between text-xs font-semibold text-brand-800">
-                          <a href="#contact" className="hover:underline flex items-center gap-1">
-                            <span>সেবার জন্য যোগাযোগ করুন</span>
-                            <ArrowUpRight className="w-3.5 h-3.5" />
-                          </a>
-                        </div>
-                      </div>
-                    );
-                  })}
                 </div>
               </div>
             );
           })}
+
+          {/* Quick Action Footer */}
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left border-t border-gray-200/60">
+            <p className="text-xs sm:text-sm text-gray-500 font-medium">
+              জরুরি স্বাস্থ্যসেবা, অ্যাম্বুলেন্স ও অক্সিজেন সহায়তার জন্য সরাসরি যোগাযোগ করুন।
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-800 hover:text-brand-900 transition-colors group"
+            >
+              <span>যোগাযোগ ও সহায়তা গ্রহণ</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </div>
+
       </div>
     </section>
   );

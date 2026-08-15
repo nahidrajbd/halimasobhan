@@ -10,35 +10,46 @@ export default function FloatingContact({ onOpenDonation }) {
       {/* Quick Action Options when expanded */}
       {expanded && (
         <div className="flex flex-col gap-2 animate-in slide-in-from-bottom-3 duration-200">
+          <a
+            href={siteConfig.contact.whatsapp.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setExpanded(false)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-lg"
+          >
+            <MessageCircle className="w-4 h-4 fill-white" />
+            <span>হোয়াটসঅ্যাপ মেসেজ</span>
+          </a>
+
+          <a
+            href={`tel:${siteConfig.contact.phone.raw}`}
+            onClick={() => setExpanded(false)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-brand-800 hover:bg-brand-900 text-white text-xs font-bold shadow-lg"
+          >
+            <Phone className="w-4 h-4" />
+            <span>সরাসরি কল করুন</span>
+          </a>
+
           <button
             onClick={() => {
               setExpanded(false);
               onOpenDonation();
             }}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-brand-800 text-white text-xs font-bold shadow-lg"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold shadow-lg"
           >
             <Heart className="w-4 h-4 fill-white" />
             <span>সহযোগিতা করুন</span>
           </button>
-
-          <a
-            href="#contact"
-            onClick={() => setExpanded(false)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-gray-900 text-white text-xs font-bold shadow-lg"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>বার্তা পাঠান</span>
-          </a>
         </div>
       )}
 
       {/* Main Floating Trigger Button */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-14 h-14 rounded-full bg-brand-800 hover:bg-brand-900 text-white flex items-center justify-center shadow-xl shadow-brand-900/30 active:scale-95 transition-transform"
+        className="w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center shadow-xl shadow-emerald-900/30 active:scale-95 transition-transform"
         aria-label="জরুরি যোগাযোগ বাটন"
       >
-        {expanded ? <X className="w-6 h-6" /> : <Phone className="w-6 h-6 animate-pulse" />}
+        {expanded ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6 animate-pulse" />}
       </button>
     </div>
   );
