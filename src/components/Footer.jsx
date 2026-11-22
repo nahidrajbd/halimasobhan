@@ -108,6 +108,42 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Arshi Group Sister Concerns */}
+        <div className="pb-10">
+          <h4 className="text-base font-bold text-white tracking-wide">
+            আরশি গ্রুপের অন্যান্য প্রতিষ্ঠান
+          </h4>
+          <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <li>
+              <a href="https://arshimedicalbazar.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                Arshi Medical Supply
+              </a>
+            </li>
+            <li>
+              <a href="https://arshicar.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                Arshi Automobile &amp; Car Hub
+              </a>
+            </li>
+            <li>
+              <a href="https://arshicity.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                Arshi Platinum City
+              </a>
+            </li>
+            <li>
+              <a href="https://arshimeditex.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                Arshi Textile (Arshi MediTex)
+              </a>
+            </li>
+            <li>
+              <a href="https://arshiglobalcare.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                Arshi Global Care
+              </a>
+            </li>
+            <li className="text-gray-500">Arshi Engineering and Technology</li>
+            <li className="text-gray-500">Arshi Hajj Kafela</li>
+          </ul>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <div>
