@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://halimasobhan.org/sitemap.xml
