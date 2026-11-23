@@ -26,29 +26,23 @@ export default {
           200: '#f4ede0',
           300: '#ebe0cd',
         },
-        accent: {
-          green: '#059669',
-          greenLight: '#ecfdf5',
-          greenDark: '#047857',
-        }
       },
       fontFamily: {
-        bengali: ['"Hind Siliguri"', '"Noto Sans Bengali"', 'sans-serif'],
-        sans: ['Inter', '"Hind Siliguri"', 'sans-serif'],
+        bengali: ['"Hind Siliguri"', 'sans-serif'],
+        sans: ['"Hind Siliguri"', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -2px rgba(0, 0, 0, 0.03)',
         'card': '0 10px 30px -5px rgba(0, 0, 0, 0.07), 0 4px 10px -2px rgba(0, 0, 0, 0.04)',
-        'lift': '0 20px 35px -8px rgba(153, 27, 27, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.06)',
+        'lift': '0 20px 35px -8px rgba(0, 0, 0, 0.10), 0 8px 16px -4px rgba(0, 0, 0, 0.06)',
       },
       animation: {
-        'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 4s ease-in-out infinite',
+        'fade-rise': 'fade-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both',
       },
       keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-6px)' },
+        'fade-rise': {
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         }
       }
     },

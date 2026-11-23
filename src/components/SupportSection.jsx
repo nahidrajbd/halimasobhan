@@ -1,24 +1,19 @@
 import React from 'react';
-import { Heart, HandHeart, MessageSquare, Shield, Sparkles, Building2, Smartphone } from 'lucide-react';
+import { Heart, HandHeart, MessageSquare, Shield, Building2 } from 'lucide-react';
 import { siteConfig } from '../data/siteData';
 
 export default function SupportSection({ onOpenDonation }) {
   return (
-    <section id="support" className="py-20 sm:py-28 bg-white border-y border-gray-100">
+    <section id="support" className="py-20 sm:py-24 bg-white border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main CTA Card */}
-        <div className="bg-gradient-to-br from-brand-900 via-brand-800 to-brand-950 rounded-3xl p-8 sm:p-12 lg:p-16 text-white shadow-lift relative overflow-hidden">
-          {/* Subtle decorative circles */}
-          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-white/5 blur-2xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-80 h-80 rounded-full bg-brand-600/20 blur-2xl pointer-events-none" />
+        <div className="bg-brand-900 rounded-2xl p-6 sm:p-12 text-white shadow-soft">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-sm font-semibold text-brand-200 mb-6">
+              মানবকল্যাণে অংশীদার হোন
+            </p>
 
-          <div className="max-w-3xl mx-auto text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-brand-100 text-sm font-semibold mb-6 backdrop-blur-md">
-              <Heart className="w-4 h-4 fill-white" />
-              <span>মানবকল্যাণে অংশীদার হোন</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6 leading-tight">
               মানুষের পাশে দাঁড়াতে আপনিও সহযোগিতা করুন
             </h2>
 
@@ -27,10 +22,10 @@ export default function SupportSection({ onOpenDonation }) {
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <button
                 onClick={onOpenDonation}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-brand-900 hover:bg-cream-100 font-bold text-base shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-white text-brand-900 hover:bg-cream-100 font-semibold text-base transition-colors"
               >
                 <Heart className="w-5 h-5 fill-brand-900" />
                 <span>সহযোগিতা করুন</span>
@@ -38,7 +33,7 @@ export default function SupportSection({ onOpenDonation }) {
 
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-brand-700/80 hover:bg-brand-700 text-white font-bold text-base border border-white/20 hover:border-white/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-transparent hover:bg-white/10 text-white font-semibold text-base border border-white/40 transition-colors"
               >
                 <MessageSquare className="w-5 h-5" />
                 <span>যোগাযোগ করুন</span>
@@ -46,10 +41,10 @@ export default function SupportSection({ onOpenDonation }) {
             </div>
 
             {/* Support Pillars / Options Info */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 border-t border-white/15 text-left">
-              <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
-                <div className="flex items-center gap-2 text-white font-bold text-sm mb-1">
-                  <HandHeart className="w-4 h-4 text-emerald-400" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/15 text-left">
+              <div>
+                <div className="flex items-center gap-2 text-white font-semibold text-sm mb-1">
+                  <HandHeart className="w-5 h-5 text-brand-200" />
                   <span>সরাসরি সেবা সহায়তা</span>
                 </div>
                 <p className="text-xs text-gray-300">
@@ -57,9 +52,9 @@ export default function SupportSection({ onOpenDonation }) {
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
-                <div className="flex items-center gap-2 text-white font-bold text-sm mb-1">
-                  <Building2 className="w-4 h-4 text-blue-400" />
+              <div>
+                <div className="flex items-center gap-2 text-white font-semibold text-sm mb-1">
+                  <Building2 className="w-5 h-5 text-brand-200" />
                   <span>ব্যাংক ও মোবাইল ব্যাংকিং</span>
                 </div>
                 <p className="text-xs text-gray-300">
@@ -67,9 +62,9 @@ export default function SupportSection({ onOpenDonation }) {
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
-                <div className="flex items-center gap-2 text-white font-bold text-sm mb-1">
-                  <Shield className="w-4 h-4 text-amber-400" />
+              <div>
+                <div className="flex items-center gap-2 text-white font-semibold text-sm mb-1">
+                  <Shield className="w-5 h-5 text-brand-200" />
                   <span>স্বেচ্ছাসেবক হিসেবে যুক্ত</span>
                 </div>
                 <p className="text-xs text-gray-300">

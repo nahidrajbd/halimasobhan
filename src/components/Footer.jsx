@@ -11,17 +11,33 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-950 text-gray-300 pt-16 pb-12 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-950 text-gray-300 pb-12">
+      {/* Signboard band: emergency help, deep red with cream text */}
+      <div className="bg-brand-800 text-cream-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <p className="text-base font-medium">
+            জরুরি অক্সিজেন ও অ্যাম্বুলেন্স সহায়তা
+          </p>
+          <a
+            href={`tel:${siteConfig.contact.phone.raw}`}
+            className="inline-flex items-center gap-2 text-white hover:text-cream-100 transition-colors"
+          >
+            <Phone className="w-5 h-5 shrink-0" />
+            <span className="text-xl sm:text-2xl font-semibold leading-none">{siteConfig.contact.phone.bn}</span>
+          </a>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-gray-800/80">
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-800 flex items-center justify-center text-white">
+              <div className="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-white">
                 <Heart className="w-5 h-5 fill-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white leading-tight">
+                <h3 className="text-xl font-semibold text-white leading-tight">
                   {siteConfig.name.bn}
                 </h3>
                 <p className="text-xs text-gray-400 font-sans">
@@ -31,7 +47,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
-              {siteConfig.tagline}। হালিমা সোবহান ফাউন্ডেশন অসহায়, দরিদ্র ও অসুস্থ মানুষের জরুরি স্বাস্থ্যসেবা, শিক্ষা সহায়তা ও স্বাবলম্বিতা অর্জনে নিবেদিত একটি অরাজনৈতিক সামাজিক কল্যাণমূলক প্রতিষ্ঠান।
+              {siteConfig.tagline} — অসহায়, দরিদ্র ও অসুস্থ মানুষের জরুরি স্বাস্থ্যসেবা, শিক্ষা সহায়তা ও স্বাবলম্বিতায় নিবেদিত সামাজিক কল্যাণমূলক প্রতিষ্ঠান।
             </p>
 
             <div className="pt-2 flex items-center gap-3 text-sm text-gray-400">
@@ -41,7 +57,7 @@ export default function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-base font-bold text-white tracking-wide">
+            <h4 className="text-base font-semibold text-white">
               গুরুত্বপূর্ণ লিঙ্ক
             </h4>
             <ul className="space-y-2 text-sm">
@@ -75,7 +91,7 @@ export default function Footer() {
 
           {/* Direct Help / Services */}
           <div className="lg:col-span-4 space-y-3">
-            <h4 className="text-base font-bold text-white tracking-wide">
+            <h4 className="text-base font-semibold text-white">
               জরুরি স্বাস্থ্য ও সমাজকল্যাণ
             </h4>
             <ul className="space-y-2 text-xs text-gray-400">
@@ -110,7 +126,7 @@ export default function Footer() {
 
         {/* Arshi Group Sister Concerns */}
         <div className="pb-10">
-          <h4 className="text-base font-bold text-white tracking-wide">
+          <h4 className="text-base font-semibold text-white">
             আরশি গ্রুপের অন্যান্য প্রতিষ্ঠান
           </h4>
           <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm">

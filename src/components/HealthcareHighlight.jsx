@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wind, Ambulance, Stethoscope, Activity, PhoneCall, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Wind, Ambulance, Stethoscope, Activity, PhoneCall, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../data/siteData';
 
 const iconMap = {
@@ -11,19 +11,14 @@ const iconMap = {
 
 export default function HealthcareHighlight() {
   return (
-    <section id="healthcare" className="py-20 sm:py-28 bg-[#FCFBF7] relative overflow-hidden">
-      {/* Background Decorative Pattern */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-100/40 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="healthcare" className="py-20 sm:py-24 bg-[#FCFBF7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 border border-brand-300 text-brand-900 text-sm font-semibold mb-4">
-            <Activity className="w-4 h-4 text-brand-800" />
-            <span>জরুরি ও প্রাথমিক স্বাস্থ্যসেবা</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <p className="text-sm font-semibold text-brand-800 mb-4">
+            জরুরি ও প্রাথমিক স্বাস্থ্যসেবা
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6">
             স্বাস্থ্যসেবা মানুষের দোরগোড়ায়
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -38,19 +33,14 @@ export default function HealthcareHighlight() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-7 border border-gray-200/90 shadow-soft hover:shadow-card hover:border-brand-500 transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between group"
+                className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-soft flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-14 h-14 rounded-2xl bg-brand-50 text-brand-800 flex items-center justify-center group-hover:bg-brand-800 group-hover:text-white transition-colors duration-300 shadow-sm">
-                      <IconComponent className="w-7 h-7" />
-                    </div>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                      {service.tag}
-                    </span>
+                  <div className="w-12 h-12 rounded-lg bg-brand-50 text-brand-800 flex items-center justify-center mb-5">
+                    <IconComponent className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-800 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {service.title}
                   </h3>
 
@@ -59,8 +49,8 @@ export default function HealthcareHighlight() {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-gray-100 flex items-center text-xs font-semibold text-gray-500 group-hover:text-brand-800">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 mr-1.5 shrink-0" />
+                <div className="pt-4 border-t border-gray-100 flex items-center text-xs font-semibold text-gray-500">
+                  <CheckCircle2 className="w-4 h-4 text-brand-800 mr-1.5 shrink-0" />
                   <span>উপযুক্ত যাচাইকরণ সাপেক্ষে</span>
                 </div>
               </div>
@@ -68,67 +58,74 @@ export default function HealthcareHighlight() {
           })}
         </div>
 
-        {/* Healthcare Doctor & Clinic Visual Feature Card */}
-        <div className="bg-white rounded-3xl border border-gray-200 shadow-card overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-            <div className="lg:col-span-6 relative h-64 sm:h-80 lg:h-full min-h-[320px]">
+        {/* Feature: full-width photo, steps beside it like a clinic notice board */}
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-soft overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-7 relative min-h-[320px]">
               <img
                 src="/images/healthcare.jpg"
-                alt="হালিমা সোবহান ফাউন্ডেশন চিকিৎসা সেবা"
-                className="w-full h-full object-cover"
+                alt="একটি স্বাস্থ্যসেবা কক্ষে রোগীর সেবার দৃশ্য"
+                className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:hidden" />
-              <div className="absolute bottom-4 left-4 right-4 text-white lg:hidden">
-                <span className="inline-block px-3 py-1 bg-brand-800/90 text-xs font-semibold rounded-lg">
-                  নিয়মিত ফ্রি মেডিকেল পরামর্শ
-                </span>
-              </div>
             </div>
 
-            <div className="lg:col-span-6 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-800 mb-2">
+            <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-center">
+              <p className="text-sm font-semibold text-brand-800 mb-2">
                 সহায়তা নির্দেশিকা
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+              </p>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4 leading-tight">
                 চিকিৎসা সহায়তা প্রয়োজন? যোগাযোগ করুন
               </h3>
               <p className="text-gray-600 text-base leading-relaxed mb-6">
                 যেকোনো মুমূর্ষু রোগীর অক্সিজেন সিলিন্ডার, জরুরি অ্যাম্বুলেন্স অথবা অসচ্ছল রোগীর চিকিৎসার আর্থিক সহায়তার জন্য সরাসরি আমাদের সাথে যোগাযোগ করুন। ফাউন্ডেশনের স্বেচ্ছাসেবক দল সাধ্যমতো দ্রুত সহায়তা পৌঁছে দিতে তৎপর।
               </p>
 
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3 text-sm text-gray-700">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-                    ✓
-                  </div>
-                  <span>মুমূর্ষু রোগীদের অগ্রাধিকার ভিত্তিতে জরুরি অক্সিজেন সেবা</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-700">
-                  <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-                    ✓
-                  </div>
-                  <span>হাসপাতালে স্থানান্তরের জন্য অ্যাম্বুলেন্স সহায়তা সমন্বয়</span>
-                </div>
-              </div>
+              {/* The three steps, set like a clinic notice board */}
+              <ol>
+                {siteConfig.howItWorksSteps.map((stepItem, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-4 py-4 border-t border-gray-200 first:border-t-0 first:pt-0 last:pb-0"
+                  >
+                    <span className="w-9 h-9 rounded-lg bg-brand-800 text-white font-semibold text-base flex items-center justify-center shrink-0">
+                      {stepItem.step}
+                    </span>
+                    <div>
+                      <h4 className="text-base font-semibold text-gray-900">
+                        {stepItem.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {stepItem.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <a
-                  href={`tel:${siteConfig.contact.phone.raw}`}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-800 hover:bg-brand-900 text-white font-bold text-sm shadow-md transition-all text-center"
-                >
-                  <PhoneCall className="w-4 h-4" />
-                  <span>সরাসরি কল: {siteConfig.contact.phone.value}</span>
-                </a>
-                <a
-                  href={siteConfig.contact.whatsapp.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all text-center"
-                >
-                  <span>হোয়াটসঅ্যাপে যোগাযোগ</span>
-                </a>
-              </div>
+          {/* Signboard band: emergency help, deep red with cream text */}
+          <div className="bg-brand-800 text-cream-50 px-6 py-5 sm:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <p className="text-base font-medium">
+              জরুরি অক্সিজেন ও অ্যাম্বুলেন্স সহায়তা
+            </p>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              <a
+                href={`tel:${siteConfig.contact.phone.raw}`}
+                className="inline-flex items-center gap-2 text-white hover:text-cream-100 transition-colors"
+              >
+                <PhoneCall className="w-5 h-5 shrink-0" />
+                <span className="text-xl sm:text-2xl font-semibold leading-none">{siteConfig.contact.phone.bn}</span>
+              </a>
+              <a
+                href={siteConfig.contact.whatsapp.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-cream-100 underline underline-offset-4 hover:text-white transition-colors"
+              >
+                হোয়াটসঅ্যাপে যোগাযোগ
+              </a>
             </div>
           </div>
         </div>

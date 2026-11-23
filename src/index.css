@@ -7,13 +7,13 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
-  
+
   body {
     @apply bg-[#FCFBF7] text-gray-800 font-bengali text-base leading-relaxed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-gray-900;
+    @apply font-semibold text-gray-900;
   }
 }
 
@@ -30,17 +30,4 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #991b1b;
-}
-
-/* Glassmorphism utility */
-.glass-nav {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
